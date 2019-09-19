@@ -68,19 +68,21 @@ def checkout(skus):
     total = 0
 
     for group_discount in group_discounts:
-        products_to_group_discount = Counter()
-        items_remaining = group_discount.items
-        for product in group_discount.products:
-            recent_product_to_take = min(basket[product], items_remaining)
-            items_remaining -= recent_product_to_take
-            products_to_group_discount[product] = recent_product_to_take
+        items_remaining = -1
+        while items_remaining == 0:
+            products_to_group_discount = Counter()
+            items_remaining = group_discount.items
+            for product in group_discount.products:
+                recent_product_to_take = min(basket[product], items_remaining)
+                items_remaining -= recent_product_to_take
+                products_to_group_discount[product] = recent_product_to_take
+                if items_remaining == 0:
+                    break
+
             if items_remaining == 0:
-                break
+                total += group_discount.price
 
-        if items_remaining == 0:
-            total += group_discount.price
-
-            basket -= products_to_group_discount
+                basket -= products_to_group_discount
 
 
     for item, number_of_pieces in basket.items():
@@ -92,4 +94,3 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
-
