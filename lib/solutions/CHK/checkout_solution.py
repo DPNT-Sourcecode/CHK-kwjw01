@@ -31,7 +31,7 @@ def checkout(skus):
     for product, item_for_free_list in items_for_free.items():
         for item_for_free in item_for_free_list:
             if counter[product] >= item_for_free.items_needed:
-                counter[item_for_free.des_product] -= item_for_free.items_needed
+                counter[item_for_free.des_product] -= item_for_free.des_items
 
     total = 0
     for item, number_of_pieces in counter.items():
@@ -43,5 +43,6 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
+
 
 
