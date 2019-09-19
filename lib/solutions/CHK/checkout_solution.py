@@ -80,7 +80,7 @@ def checkout(skus):
         if items_remaining == 0:
             total += group_discount.price
 
-            basket 
+            basket - products_to_group_discount
 
 
     for item, number_of_pieces in basket.items():

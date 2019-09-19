@@ -37,3 +37,6 @@ class TestChk():
 
     def test_ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ(self):
         assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ') == 1880
+
+    def test_group_discount(self):
+        assert checkout('ZZYYX') == 45 + 20 + 17
