@@ -10,3 +10,6 @@ class TestChk():
 
     def test_special_offer(self):
         assert checkout('AAAA') == 180
+
+    def test_items_for_free(self):
+        assert checkout('EEEBB') == 150
