@@ -2,6 +2,9 @@
 def compute(x, y):
     return x + y
 
-def sum_solution(x, y):
-    return x + y
+
+class sum_solution:
+    @staticmethod
+    def compute(x, y):
+        return x + y
 
