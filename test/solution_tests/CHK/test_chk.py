@@ -13,3 +13,8 @@ class TestChk():
 
     def test_items_for_free(self):
         assert checkout('EEEBB') == 150
+
+    def EEEEBB(self):
+        assert checkout('EEEEBB') == 160
+
+    def 

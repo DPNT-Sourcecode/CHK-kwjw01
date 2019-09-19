@@ -29,9 +29,11 @@ def checkout(skus):
         counter[item] += 1
 
     for product, item_for_free_list in items_for_free.items():
+        number_of_products = counter[product]
         for item_for_free in item_for_free_list:
-            if counter[product] >= item_for_free.items_needed:
-                counter[item_for_free.des_product] -= item_for_free.des_items
+            action_count = number_of_products // item_for_free.items_needed
+            number_of_products -= action_count * item_for_free.items_needed
+            counter[item_for_free.des_product] -= action_count * item_for_free.des_items
 
     total = 0
     for item, number_of_pieces in counter.items():
