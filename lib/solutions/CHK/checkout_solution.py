@@ -10,6 +10,7 @@ prices_map = {
     'C': [Price(1, 20)],
     'D': [Price(1, 15)],
     'E': [Price(1, 40)],
+    'F': [Price(3, 20), Price(1, 10)],
 }
 
 ItemForFreeOffer = namedtuple('ItemForFreeOffer', ('items_needed', 'des_product', 'des_items'))
@@ -45,7 +46,3 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
-
-
-
-

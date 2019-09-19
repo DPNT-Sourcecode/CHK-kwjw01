@@ -19,3 +19,9 @@ class TestChk():
 
     def BEBEEE(self):
         assert checkout('BEBEEE') == 160
+
+    def FFF(self):
+        assert checkout('FFF') == 20
+
+    def FFFA(self):
+        assert checkout('FFFA') == 70
