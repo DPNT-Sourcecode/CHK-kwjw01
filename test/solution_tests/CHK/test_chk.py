@@ -1,4 +1,4 @@
-from solutions.CHK.checkout_solution import checkout
+from lib.solutions.CHK.checkout_solution import checkout
 
 
 class TestChk():
@@ -10,3 +10,4 @@ class TestChk():
 
     def test_special_offer(self):
         assert checkout('AAAA') == 180
+
