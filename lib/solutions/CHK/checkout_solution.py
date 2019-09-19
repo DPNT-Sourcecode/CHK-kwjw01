@@ -48,6 +48,7 @@ group_discounts = [
     GroupDiscount(['Z', 'Y', 'T', 'S', 'X'], 3, 45)
 ]
 
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
@@ -58,17 +59,10 @@ def checkout(skus):
 
         basket[item] += 1
 
-    for product, item_for_free_list in items_for_free.items():
-        number_of_products = basket[product]
-        for item_for_free in item_for_free_list:
-            action_count = number_of_products // item_for_free.items_needed
-            number_of_products -= action_count * item_for_free.items_needed
-            basket[item_for_free.des_product] -= action_count * item_for_free.des_items
-
     total = 0
 
     for group_discount in group_discounts:
-        items_remaining = -1
+        items_remaining = 0
         while items_remaining == 0:
             products_to_group_discount = Counter()
             items_remaining = group_discount.items
@@ -84,6 +78,12 @@ def checkout(skus):
 
                 basket -= products_to_group_discount
 
+    for product, item_for_free_list in items_for_free.items():
+        number_of_products = basket[product]
+        for item_for_free in item_for_free_list:
+            action_count = number_of_products // item_for_free.items_needed
+            number_of_products -= action_count * item_for_free.items_needed
+            basket[item_for_free.des_product] -= action_count * item_for_free.des_items
 
     for item, number_of_pieces in basket.items():
         prices = prices_map[item]
@@ -94,3 +94,4 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
+
