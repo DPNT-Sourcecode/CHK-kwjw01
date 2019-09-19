@@ -11,12 +11,33 @@ prices_map = {
     'D': [Price(1, 15)],
     'E': [Price(1, 40)],
     'F': [Price(3, 20), Price(1, 10)],
+    'G': [Price(1, 20)],
+    'H': [Price(10, 80), Price(5, 45)],
+    'I': [Price(1, 35)],
+    'J': [Price(1, 60)],
+    'K': [Price(2, 150), Price(1, 80)],
+    'M': [Price(1, 15)],
+    'N': [Price(1, 40)],
+    'O': [Price(1, 10)],
+    'P': [Price(5, 200), Price(1, 50)],
+    'Q': [Price(3, 80), Price(1, 30)],
+    'R': [Price(1, 50)],
+    'S': [Price(1, 30)],
+    'T': [Price(1, 20)],
+    'U': [Price(4, 120), Price(1, 40)],
+    'V': [Price(3, 130), Price(2, 90), Price(1, 50)],
+    'W': [Price(1, 20)],
+    'X': [Price(1, 90)],
+    'Y': [Price(1, 10)],
+    'Z': [Price(1, 50)],
 }
 
 ItemForFreeOffer = namedtuple('ItemForFreeOffer', ('items_needed', 'des_product', 'des_items'))
 
 items_for_free = {
     'E': [ItemForFreeOffer(2, 'B', 1)],
+    'N': [ItemForFreeOffer(3, 'M', 1)],
+    'R': [ItemForFreeOffer(3, 'Q', 1)],
 }
 
 # noinspection PyUnusedLocal
@@ -46,3 +67,4 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
+

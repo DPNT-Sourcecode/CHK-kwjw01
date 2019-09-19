@@ -3,7 +3,7 @@ from lib.solutions.CHK.checkout_solution import checkout
 
 class TestChk():
     def test_not_existing_item(self):
-        assert checkout('ABSD') == -1
+        assert checkout('AB#D') == -1
 
     def test_single_pieces(self):
         assert checkout('ABCD') == 115
