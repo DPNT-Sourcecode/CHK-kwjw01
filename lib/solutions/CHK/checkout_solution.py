@@ -2,6 +2,7 @@ from collections import namedtuple, Counter
 
 Price = namedtuple('Price', ('items', 'price'))
 
+# we assume that in prices_map for every item there will be price for one piece
 prices_map = {
     "A": [Price(3, 130), Price(1, 50)],
     "B": [Price(2, 45), Price(1, 30)],
@@ -19,12 +20,17 @@ def checkout(skus):
 
         counter[item] += 1
 
-    price = 0
+    total = 0
     for item, number_of_pieces in counter.items():
         prices = prices_map[item]
 
         while number_of_pieces > 0:
-            price = next(p for p )
+            price = next(p for p in prices if p.items <= number_of_pieces)
+            total += price.price
+            number_of_pieces -= price.items
+
+    return total
+
 
 
 
