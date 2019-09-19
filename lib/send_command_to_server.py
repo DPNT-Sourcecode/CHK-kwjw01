@@ -1,7 +1,7 @@
 import sys
 from tdl.queue.queue_based_implementation_runner import QueueBasedImplementationRunnerBuilder
 from tdl.runner.challenge_session import ChallengeSession
-from solutions.SUM import sum_solution
+from solutions.SUM.sum_solution import sum_solution
 from solutions.HLO import hello_solution
 from solutions.ARRS import array_sum
 from solutions.IRNG import int_range
