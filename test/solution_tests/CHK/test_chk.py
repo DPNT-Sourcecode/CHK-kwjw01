@@ -1,6 +1,12 @@
-from solutions.CHK.sum_solution import sum_solution
+from solutions.CHK.checkout_solution import checkout
 
 
-class TestSum():
-    def test_sum(self):
-        assert sum_solution.compute(1, 2) == 3
+class TestChk():
+    def test_not_existing_item(self):
+        assert checkout('ABSD') == -1
+
+    def test_single_pieces(self):
+        assert checkout('ABCD') == 115
+
+    def test_special_offer(self):
+        assert checkout('AAAA') == 180

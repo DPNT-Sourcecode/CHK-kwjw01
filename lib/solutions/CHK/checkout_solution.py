@@ -3,6 +3,7 @@ from collections import namedtuple, Counter
 Price = namedtuple('Price', ('items', 'price'))
 
 # we assume that in prices_map for every item there will be price for one piece
+# we also assume that prices are sorted by items from biggest and it always worth to buy more items
 prices_map = {
     "A": [Price(3, 130), Price(1, 50)],
     "B": [Price(2, 45), Price(1, 30)],
