@@ -15,7 +15,7 @@ prices_map = {
     'H': [Price(10, 80), Price(5, 45), Price(1, 10)],
     'I': [Price(1, 35)],
     'J': [Price(1, 60)],
-    'K': [Price(2, 150), Price(1, 80)],
+    'K': [Price(2, 120), Price(1, 70)],
     'L': [Price(1, 90)],
     'M': [Price(1, 15)],
     'N': [Price(1, 40)],
@@ -23,14 +23,14 @@ prices_map = {
     'P': [Price(5, 200), Price(1, 50)],
     'Q': [Price(3, 80), Price(1, 30)],
     'R': [Price(1, 50)],
-    'S': [Price(1, 30)],
+    'S': [Price(1, 20)],
     'T': [Price(1, 20)],
     'U': [Price(4, 120), Price(1, 40)],
     'V': [Price(3, 130), Price(2, 90), Price(1, 50)],
     'W': [Price(1, 20)],
-    'X': [Price(1, 90)],
-    'Y': [Price(1, 10)],
-    'Z': [Price(1, 50)],
+    'X': [Price(1, 17)],
+    'Y': [Price(1, 20)],
+    'Z': [Price(1, 21)],
 }
 
 ItemForFreeOffer = namedtuple('ItemForFreeOffer', ('items_needed', 'des_product', 'des_items'))
@@ -80,7 +80,7 @@ def checkout(skus):
         if items_remaining == 0:
             total += group_discount.price
 
-            basket - products_to_group_discount
+            basket -= products_to_group_discount
 
 
     for item, number_of_pieces in basket.items():

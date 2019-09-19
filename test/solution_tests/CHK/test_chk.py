@@ -1,6 +1,6 @@
 from lib.solutions.CHK.checkout_solution import checkout
 
-
+# it will be good to have fixed test prices
 class TestChk():
     def test_not_existing_item(self):
         assert checkout('AB#D') == -1
@@ -33,10 +33,10 @@ class TestChk():
         assert checkout('L') == 90
 
     def test_ABCDEFGHIJKLMNOPQRSTUVWXYZ(self):
-        assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZ') == 965
+        assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZ') == 837
 
     def test_ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ(self):
-        assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ') == 1880
+        assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ') == 1629
 
     def test_group_discount(self):
         assert checkout('ZZYYX') == 45 + 20 + 17
