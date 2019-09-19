@@ -14,6 +14,9 @@ class TestChk():
     def test_items_for_free(self):
         assert checkout('EEEBB') == 150
 
+    def test_group_discount(self):
+        assert checkout('ZZYYX') == 45 + 20 + 17
+
     def test_EEEEBB(self):
         assert checkout('EEEEBB') == 160
 
@@ -38,5 +41,12 @@ class TestChk():
     def test_ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ(self):
         assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ') == 1629
 
-    def test_group_discount(self):
-        assert checkout('ZZYYX') == 45 + 20 + 17
+    def test_STXSTX(self):
+        assert checkout('STXSTX') == 90
+
+    def test_ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ(self):
+        assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ') == 1602
+
+    def test_LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH(self):
+        assert checkout('LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH') == 1602
+
