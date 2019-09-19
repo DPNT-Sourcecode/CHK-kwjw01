@@ -14,17 +14,26 @@ class TestChk():
     def test_items_for_free(self):
         assert checkout('EEEBB') == 150
 
-    def EEEEBB(self):
+    def test_EEEEBB(self):
         assert checkout('EEEEBB') == 160
 
-    def BEBEEE(self):
+    def test_BEBEEE(self):
         assert checkout('BEBEEE') == 160
 
-    def FFF(self):
+    def test_FFF(self):
         assert checkout('FFF') == 20
 
-    def FFFA(self):
+    def test_FFFA(self):
         assert checkout('FFFA') == 70
 
-    def H(self):
+    def test_H(self):
         assert checkout('H') == 10
+
+    def test_L(self):
+        assert checkout('L') == 90
+
+    def test_ABCDEFGHIJKLMNOPQRSTUVWXYZ(self):
+        assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZ') == 965
+
+    def test_ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ(self):
+        assert checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ') == 1880

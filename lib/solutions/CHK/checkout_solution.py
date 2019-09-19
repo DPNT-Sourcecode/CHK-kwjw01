@@ -16,6 +16,7 @@ prices_map = {
     'I': [Price(1, 35)],
     'J': [Price(1, 60)],
     'K': [Price(2, 150), Price(1, 80)],
+    'L': [Price(1, 90)],
     'M': [Price(1, 15)],
     'N': [Price(1, 40)],
     'O': [Price(1, 10)],
@@ -67,4 +68,3 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
-
