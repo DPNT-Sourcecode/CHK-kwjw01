@@ -17,5 +17,9 @@ def checkout(skus):
         if item not in prices:
             return -1
 
-        counter.
+        counter[item] += 1
+
+    price = 0
+    for number_of_piece
+
 
