@@ -41,25 +41,49 @@ items_for_free = {
     'R': [ItemForFreeOffer(3, 'Q', 1)],
 }
 
+# products should be starting from the most expensive
+GroupDiscount = namedtuple('GroupDiscount', ('products', 'items', 'price'))
+
+group_discounts = [
+    GroupDiscount(['Z', 'Y', 'T', 'S', 'X'], 3, 45)
+]
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    counter = Counter()
+    basket = Counter()
     for item in skus:
         if item not in prices_map:
             return -1
 
-        counter[item] += 1
+        basket[item] += 1
 
     for product, item_for_free_list in items_for_free.items():
-        number_of_products = counter[product]
+        number_of_products = basket[product]
         for item_for_free in item_for_free_list:
             action_count = number_of_products // item_for_free.items_needed
             number_of_products -= action_count * item_for_free.items_needed
-            counter[item_for_free.des_product] -= action_count * item_for_free.des_items
+            basket[item_for_free.des_product] -= action_count * item_for_free.des_items
 
     total = 0
-    for item, number_of_pieces in counter.items():
+
+    for group_discount in group_discounts:
+        products_to_group_discount = Counter()
+        items_remaining = group_discount.items
+        for product in group_discount.products:
+            recent_product_to_take = min(basket[product], items_remaining)
+            items_remaining -= recent_product_to_take
+            products_to_group_discount[product] = recent_product_to_take
+            if items_remaining == 0:
+                break
+
+        if items_remaining == 0:
+            total += group_discount.price
+
+            basket 
+
+
+    for item, number_of_pieces in basket.items():
         prices = prices_map[item]
 
         while number_of_pieces > 0:
@@ -68,3 +92,4 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
+
