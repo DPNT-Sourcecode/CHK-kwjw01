@@ -12,7 +12,7 @@ prices_map = {
     'E': [Price(1, 40)],
     'F': [Price(3, 20), Price(1, 10)],
     'G': [Price(1, 20)],
-    'H': [Price(10, 80), Price(5, 45)],
+    'H': [Price(10, 80), Price(5, 45), Price(1, 10)],
     'I': [Price(1, 35)],
     'J': [Price(1, 60)],
     'K': [Price(2, 150), Price(1, 80)],

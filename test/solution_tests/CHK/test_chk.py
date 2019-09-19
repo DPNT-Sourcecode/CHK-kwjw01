@@ -25,3 +25,6 @@ class TestChk():
 
     def FFFA(self):
         assert checkout('FFFA') == 70
+
+    def H(self):
+        assert checkout('H') == 10
