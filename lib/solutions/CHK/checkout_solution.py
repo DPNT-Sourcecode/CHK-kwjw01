@@ -5,11 +5,13 @@ Price = namedtuple('Price', ('items', 'price'))
 # we assume that in prices_map for every item there will be price for one piece
 # we also assume that prices are sorted by items from biggest and it always worth to buy more items
 prices_map = {
-    "A": [Price(3, 130), Price(1, 50)],
-    "B": [Price(2, 45), Price(1, 30)],
-    "C": [Price(1, 20)],
-    "D": [Price(1, 15)],
+    'A': [Price(3, 130), Price(1, 50)],
+    'B': [Price(2, 45), Price(1, 30)],
+    'C': [Price(1, 20)],
+    'D': [Price(1, 15)],
 }
+
+ItemForFreeOffer = namedtuple('ItemForFreeOffer', ('items_needed'))
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -31,3 +33,4 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
+
