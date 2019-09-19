@@ -17,4 +17,5 @@ class TestChk():
     def EEEEBB(self):
         assert checkout('EEEEBB') == 160
 
-    def 
+    def BEBEEE(self):
+        assert checkout('BEBEEE') == 160
