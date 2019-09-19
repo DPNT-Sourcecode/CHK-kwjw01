@@ -31,7 +31,3 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
-
-
-
-

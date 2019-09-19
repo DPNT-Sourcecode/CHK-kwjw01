@@ -10,4 +10,3 @@ class TestChk():
 
     def test_special_offer(self):
         assert checkout('AAAA') == 180
-
