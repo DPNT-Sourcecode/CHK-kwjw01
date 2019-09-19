@@ -9,9 +9,14 @@ prices_map = {
     'B': [Price(2, 45), Price(1, 30)],
     'C': [Price(1, 20)],
     'D': [Price(1, 15)],
+    'E': [Price(1, 40)],
 }
 
-ItemForFreeOffer = namedtuple('ItemForFreeOffer', ('items_needed'))
+ItemForFreeOffer = namedtuple('ItemForFreeOffer', ('items_needed', 'des_product', 'des_items'))
+
+items_for_free = {
+    'E': [ItemForFreeOffer(2, 'B', 1)],
+}
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -23,6 +28,8 @@ def checkout(skus):
 
         counter[item] += 1
 
+    for 
+
     total = 0
     for item, number_of_pieces in counter.items():
         prices = prices_map[item]
@@ -33,4 +40,5 @@ def checkout(skus):
             number_of_pieces -= price.items
 
     return total
+
 
